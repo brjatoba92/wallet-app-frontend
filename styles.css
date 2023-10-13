@@ -125,16 +125,16 @@ input{
     border-radius: 24px;
 }
 
+
 .avatar-user-container{
+    display: flex;
+    flex-direction: column;
     background-color: #E4FDE1;
     width: 48px;
     height: 48px;
-}
-
-.avatar-user-text{
-    width: 14px;
-    height: 28px;
-
+    border-radius: 48px;
+    align-items: center;
+    justify-content: center;
 }
 
 .root{
@@ -199,5 +199,89 @@ a.new-cadastre{
     height: 15px;
     text-align: center;
     justify-content: center;
+
+}
+
+body.home{
+    background-color: #F4F4F9;
+    width: 1440px;
+    height: 940px;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding: 24px 112px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFF;
+}
+
+.nav-bar-container-date{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    padding: 8px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #06BEE1;
+}
+
+.nav-bar-container-date-text{
+    display: flex;
+    width: 156px;
+    height: 48px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+h4.date{
+    color: #010400
+}
+
+.nav-bar-container-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-bar-container-user-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 202px;
+    height: 48px;
+}
+
+h3.sair{
+    font-size: 14px;
+    width: 26px;
+    height: 19px;
+    font-weight: 600;
+}
+
+h4.email{
+    color:#010400;
+    font-size: 14px;
+    font-weight: 600;
+    width: 142px;
+    height: 19px;
+    font-style: normal;
+}
+
+h3.avatar-user-text{
+    width: 14px;
+    height: 28px;
+    font-size: 20px;
+    color: #010400;
 
 }
