@@ -118,6 +118,25 @@ input{
 
 }
 
+.box-cash{
+    background-color: #FFFFFF;
+    width: 280px;
+    height: 140px;
+    border-radius: 24px;
+}
+
+.avatar-user-container{
+    background-color: #E4FDE1;
+    width: 48px;
+    height: 48px;
+}
+
+.avatar-user-text{
+    width: 14px;
+    height: 28px;
+
+}
+
 .root{
     display: flex;
     flex-direction: column;
@@ -126,7 +145,6 @@ input{
     align-items: center;
     width: 1440px;
     height: 940px;
-
 }
 
 .container-login{
