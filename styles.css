@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
+
+h1{
+    font-family: Noto Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    width: 101px;
+    height: 25px;
+}
+
+h2{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    color: #7C7C7C;
+}
+
+.root{
+    font-family: Noto Sans;
+    display: flex;
+    flex-direction: column;
+    background-color: #5936CD;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    height: 940px;
+
+}
+
+.container-login{
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 460px;
+    background-color: #F4F4F9;
+    border-radius: 24px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 24px;
+}
+
+.icon-img{
+    width: 88px;
+    height: 29.614px;
+}
+
+.formulario-login{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.user-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 432px;
+    height: 73px;
+
+}
+
+h2.email{
+    color: #010400;
+}
+
+.campo-email{
+    display: flex;
+    height: 48px;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #06BEE1;
+    width: 432px;
+}
+
+.email-text{
+    font-size: 16px;
+    font-weight: 500;
+    color: #7C7C7C;
+    align-items: center;
+    justify-content: center;
+}
+
+.botton-container{
+    display: flex;
+    flex-direction: column;
+    height: 56px;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px;
+    border-style: 2px solid;
+    width: 432px;
+    height: 56px;
+    border-color: #5936CD;
+    background-color: #5936CD;
+    margin-top: 50px;
+}
+
+h1.bottom{
+    align-items: center;
+    color: #F4F4F9;
+}
+
+h2.new-cadastre{
+    width: 432px;
+    height: 15px;
+    text-align: center;
+    font-weight: 600;
+
+}
