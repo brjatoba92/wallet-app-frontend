@@ -5,6 +5,7 @@ body{
     margin: 0px;
     font-family: 'Noto Sans', sans-serif;
     color: #010400;
+    width: 100vw;
 }
 
 h1{
@@ -285,3 +286,78 @@ h3.avatar-user-text{
     color: #010400;
 
 }
+
+.section-cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding: 24px;
+
+}
+
+h2.lancamento-value{
+    font-size: 40px;
+    font-weight: 800;
+    width: 70px;
+    height: 54px;
+}
+
+h3.lancamento-title{
+    width: 197px;
+    height: 25px;
+}
+
+h3.lancamento-title-receitas{
+    font-size: 18px;
+    width: 76px;
+    height: 25px;
+    font-weight: 700;
+}
+
+h2.lancamento-value-receitas{
+    width: 223px;
+    height: 54px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+h3.lancamento-title-despesas{
+    font-size: 18px;
+    width: 84px;
+    height: 25px;
+    font-weight: 700;
+}
+
+h2.lancamento-value-despesas{
+    width: 223px;
+    height: 54px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+h3.lancamento-title-balanco{
+    font-size: 18px;
+}
+
+h2.lancamento-value-balanco{
+    color: #5936CD;
+    width: 223px;
+    height: 54px;
+    font-size: 40px;
+}
+
+.card-values-info{
+    display: flex;
+    width: 280px;
+    height: 140px;
+    padding: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 24px;
+    background-color: #FFF;
+}
+
+
