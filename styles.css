@@ -350,10 +350,10 @@ h2.lancamento-value-balanco{
 
 .card-values-info{
     display: flex;
+    flex-direction: column;
     width: 280px;
     height: 140px;
     padding: 24px;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-radius: 24px;
