@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
+
 body{
     padding: 0px;
     margin: 0px;
@@ -207,13 +208,15 @@ body.home{
     background-color: #F4F4F9;
     width: 1440px;
     height: 940px;
+    width: 100vw;
+    overflow: hidden;
+
 }
 
 .nav-bar{
     display: flex;
     flex-direction: row;
     height: 72px;
-    
     padding: 24px 112px;
     justify-content: space-between;
     align-items: center;
@@ -293,7 +296,7 @@ h3.avatar-user-text{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-top: 24px;
+    margin: 24px;
     padding: 24px;
 
 }
@@ -359,6 +362,7 @@ h2.lancamento-value-balanco{
     align-items: center;
     border-radius: 24px;
     background-color: #FFF;
+    margin-right: 24px;
 }
 
 
