@@ -212,7 +212,8 @@ body.home{
 .nav-bar{
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    height: 72px;
+    
     padding: 24px 112px;
     justify-content: space-between;
     align-items: center;
