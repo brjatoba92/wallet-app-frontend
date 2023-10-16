@@ -2,11 +2,20 @@
 
 
 body{
+    display: flex;
+    flex-direction: column;
     padding: 0px;
     margin: 0px;
     font-family: 'Noto Sans', sans-serif;
     color: #010400;
-    width: 100vw;
+    width: 1440px;
+    height: 940px;
+    align-items: center;
+    justify-content: center;
+    background-color: #5936CD;
+    overflow-x:hidden;
+    overflow-y: hidden;
+
 }
 
 h1{
@@ -19,7 +28,7 @@ h1{
 
 h2{
     font-size: 24px;
-    font-weight: bold;
+    font-weight:bold;
     margin: 0px;
     padding: 0px;
 }
@@ -29,6 +38,11 @@ h3{
     font-weight: bold;
     margin: 0px;
     padding: 0px;
+}
+
+h3.form-title{
+    width: 100%;
+    height: 25px;
 }
 
 h4{
@@ -47,8 +61,14 @@ p{
     padding: 0px;
 }
 
+p.show{
+    width: 432px;
+    height: 38px;
+}
+
 label{
     width: 100%;
+    height: 74px;
     font-size: 14px;
     font-weight: 500;
 }
@@ -57,6 +77,14 @@ a{
     font-size: 14px;
     font-weight: 700;
     text-decoration: underline;
+}
+
+a.new-cadastre{
+    width: 432px;
+    height: 15px;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
 }
 
 button{
@@ -70,6 +98,15 @@ button{
     font-size: 16px;
     border-color: #5936CD;
     border-style: solid;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+button.sigup{
+    margin-top: 90px;
+
 }
 
 button.small{
@@ -81,9 +118,10 @@ button.small{
     height: 36px;
 }
 
+
 input{
     background-color: #F4F4F9;
-    width: 100%;
+    width: 432px;
     height: 48px;
     border-color: #06BEE1;
     border-style: solid;
@@ -139,15 +177,6 @@ input{
     justify-content: center;
 }
 
-.root{
-    display: flex;
-    flex-direction: column;
-    background-color: #5936CD;
-    justify-content: center;
-    align-items: center;
-    width: 1440px;
-    height: 940px;
-}
 
 .container-login{
     display: flex;
@@ -158,12 +187,30 @@ input{
     border-radius: 24px;
     justify-content: space-between;
     align-items: center;
-    padding: 36px 24px;
+    padding-top: 36px;
+    padding-left: 24px;
+    padding-bottom: 36px;
+    padding-right: 24px;
+}
+
+.container-sigup{
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+    height: 520px;
+    background-color: #F4F4F9;
+    border-radius: 24px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 36px;
+    padding-left: 24px;
+    padding-bottom: 36px;
+    padding-right: 24px;
 }
 
 .icon-img{
     width: 88px;
-    height: auto;
+    height: 30px;
 }
 
 .formulario-login{
@@ -171,6 +218,8 @@ input{
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    width: 432px;
+    height: 168px;
 }
 
 .user-card{
@@ -179,8 +228,16 @@ input{
     align-items: flex-start;
     gap: 6px;
     width: 432px;
-    height: 73px;
+    height: 74px;
+}
 
+.box-email{
+    width: 432px;
+    height: 48px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #06BEE1;
 }
 
 
@@ -190,19 +247,9 @@ input{
     padding: 10px;
     align-items: center;
     gap: 10px;
-    border-radius: 8px;
-    border-style: solid;
-    border-color: #06BEE1;
-    width: 432px;
 }
 
-a.new-cadastre{
-    width: 432px;
-    height: 15px;
-    text-align: center;
-    justify-content: center;
 
-}
 
 body.home{
     background-color: #F4F4F9;
@@ -296,9 +343,10 @@ h3.avatar-user-text{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 24px;
-    padding: 24px;
-
+    margin-top: 24px;
+    padding: 24px 24px 24px 24px;
+    margin-left: 90px;
+    width: 1210px;
 }
 
 h2.lancamento-value{
@@ -363,6 +411,21 @@ h2.lancamento-value-balanco{
     border-radius: 24px;
     background-color: #FFF;
     margin-right: 24px;
+    
 }
 
+.section-planilha{
+    width: 1210px;
+    height: 592px;
+    border-radius: 24px;
+    background-color: #FFF;
+    padding-top: 24px;
+    margin-left: 112px;
+}
+
+.planilha-title{
+    width: 255px;
+    height: 33px;
+    margin-left: 24px;
+}
 

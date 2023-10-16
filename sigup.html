@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Wallet App - Login </title>
+        <title>Wallet App - Sigup </title>
         <link rel="stylesheet" href="styles.css">
         <script src="index.js"></script>
     </head>
     <body>
-        <section class="container-login">
+        <section class="container-sigup">
             <img class="icon-img" src="icons/logo-wallet.png"/ >
             <div class="formulario-login">
-                <h3 class="form-title">Bem-vindo!</h3>
-                <p class="show">Digite seu e-mail abaixo para ter acesso à aplicação financeira Wallet, e ter uma melhor controle dos seus gastos mensais.</p>
+                <h3 class="form-title">Novo Cadastro</h3>
+                <p class="show">Insira seu nome e seu e-mail para ter acesso ao Wallet app e gerenciar suas finanças</p>
                 <div class="user-card">
+                    <label for="input-email">Nome</label>
+                    <div class="box-email">
+                        <input id="input-email" placeholder="Ex: José da Silva"/>
+                    </div>
                     <label for="input-email">Email</label>
                     <div class="box-email">
                         <input id="input-email" placeholder="email@email.fo.bar"/>
                     </div>
                 </div>
             </div>    
-            <button>Acessar</button>
+            <button class="sigup">Cadastrar</button>
             <a class="new-cadastre">Não tem conta ? Faça seu cadastro aqui.</a>
         </section>
-
     </body>
 </html>
