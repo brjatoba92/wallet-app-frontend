@@ -7,36 +7,11 @@ body{
     font-family: 'Noto Sans', sans-serif;    
 }
 
-body.home{
-    background-color: #F4F4F9;
-}
-
 h1{
     font-size: 40px;
     font-weight: bolder;
     margin: 0px;
     padding: 0px;
-}
-
-h1.lancamento-value{
-    width: 70px;
-    height: 54px;
-}
-
-h1.lancamento-value-receitas{
-    width: 223px;
-    height: 54px;
-}
-
-h1.lancamento-value-despesas{
-    width: 223px;
-    height: 54px;
-}
-
-h1.lancamento-value-balanco{
-    color: #5936CD;
-    width: 223px;
-    height: 54px;
 }
 
 h2{
@@ -46,65 +21,11 @@ h2{
     padding: 0px;
 }
 
-h2.planilha-title{
-    width: 256px;
-    height: 32px;
-}
-
 h3{
     font-size: 18px;
     font-weight: bold;
     margin: 0px;
     padding: 0px;
-}
-
-h3.form-title{
-    width: 102px;
-    height: 24px;
-}
-
-h3.sair{
-    font-size: 14px;
-    width: 26px;
-    height: 20px;
-    font-weight: 600;
-}
-
-h3.email{
-    color:#010400;
-    font-size: 14px;
-    font-weight: 600;
-    width: 142px;
-    height: 19px;
-    font-style: normal;
-
-}
-
-h3.avatar-user-text{
-    font-size: 20px;
-    width: 14px;
-    height: 28px;
-    color: #010400;
-}
-
-h3.lancamento-title{
-    width: 198px;
-    height: 24px;
-}
-
-h3.lancamento-title-receitas{
-    width: 76px;
-    height: 24px;
-}
-
-h3.lancamento-title-despesas{
-    width: 84px;
-    height: 24px;
-}
-
-h3.lancamento-title-balanco{
-    width: 72px;
-    height: 24px;
 }
 
 h4{
@@ -115,10 +36,6 @@ h4{
     padding: 0px;
 }
 
-h4.date{
-    color: #010400
-}
-
 p{
     font-size: 14px;
     color: #7c7c7c;
@@ -127,10 +44,6 @@ p{
     padding: 0px;
 }
 
-p.show{
-    width: 432px;
-    height: 38px;
-}
 
 label{
     width: 100%;
@@ -160,6 +73,7 @@ button{
     padding-right: 12px;
     padding-top: 8px;
     padding-bottom: 8px;
+    cursor: pointer;
 }
 
 button.sigup{
@@ -231,6 +145,10 @@ input{
     background-color: #5936CD;
     align-items: center;
     justify-content: center;
+}
+
+.auth-container.home{
+    background-color: #F4F4F9;
 }
 
 .auth-content{
