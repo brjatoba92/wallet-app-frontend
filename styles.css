@@ -101,7 +101,10 @@ button.small{
     text-align: left;
 }
 
-
+img.logo{
+    width: 88px;
+    height: 30px;
+}
 
 
 input{
