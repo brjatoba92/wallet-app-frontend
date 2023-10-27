@@ -3,6 +3,7 @@
     <head>
         <title>Wallet App - Sigup </title>
         <link rel="stylesheet" href="../../../styles.css">
+        <script src="index.js"></script>
     </head>
     <body>
         <div class="auth-container">
@@ -13,24 +14,30 @@
                     <p class="mt-small">
                         Insira seu nome e seu e-mail para ter acesso ao Wallet app e gerenciar suas finanças.
                     </p>
-                    <label class="mt" for="input-name">Nome: </label>
-                    <input 
-                        class="mt-smaller"  
-                        type="text" 
-                        id="input-name" 
-                        name="input-name"
-                        placeholder="Insira seu nome:"
-                    />
-                    <label for="input-email" class="mt">Email: </label>
-                    <input 
-                        class="mt-smaller"  
-                        type="email" 
-                        id="input-email" 
-                        name="input-email"
-                        placeholder="email@foo.bar"
-                    />
-                    <button class="mt full-width">Cadastrar</button>
-                    <a href="../../../index.html" class="mt-larger">Já possui uma conta ? Faça o seu login</a>
+                    <form id="form-register" class="mt">
+                        <label  for="input-name">Nome: </label>
+                        <input 
+                            class="mt-smaller"  
+                            type="text" 
+                            id="input-name" 
+                            name="input-name"
+                            placeholder="Insira seu nome:"
+                            required="true"
+                        />
+                        <label for="input-email">Email: </label>
+                        <input 
+                            class="mt-smaller"  
+                            type="email" 
+                            id="input-email" 
+                            name="input-email"
+                            placeholder="email@foo.bar"
+                            required="true"
+                        />
+                        <button class="mt full-width" type="submit">Cadastrar</button>
+                    </form>
+                    <a href="../../../index.html" class="mt-larger">
+                        Já possui uma conta ? Faça o seu login
+                    </a>
                 </div>
             </div>
         </div>
