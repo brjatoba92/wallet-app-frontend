@@ -121,20 +121,20 @@ input{
     margin-top: 16px;
 }
 
-.mt.larger{
+.mt-larger{
     margin-top: 32px;
 }
 
-.mt.large{
+.mt-large{
     margin-top: 24px;
 }
 
-.mt.small{
+.mt-small{
     margin-top: 12px;
 
 }
 
-.mt.smaller{
+.mt-smaller{
     margin-top: 6px;
 }
 
