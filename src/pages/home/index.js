@@ -1,7 +1,95 @@
+const renderFinanceElements = (data) => {
+    const totalItems  = data.lenght;
+    const revenues = data
+        .filter((item) => Number(item.value) > 0)
+        .reduce((acc, item) => acc + Number(item.value), 0);
+    const expenses = data
+        .filter((item) => Number(item.value) < 0)
+        .reduce((acc, item) => acc + Number(item.value), 0);
+    const totalValue = revenues + expenses;
+
+    //render total items
+
+    const financeCard1 = document.getElementById("finance-card-1");
+    const totalText = document.createTextNode(totalItems);
+    const totalElement = document.createElement("h1");
+    totalElement.className = "mt-smaller";
+    totalElement.appendChild(totalText);
+    financeCard1.appendChild(totalTextElement);
+
+    //render revenues
+
+    const financeCard2 = document.getElementById("finance-card-2");
+    const revenueText = document.createTextNode(
+        new Intl.NumberFormat('pt-BR', { 
+            style: 'currency', 
+            currency: 'BRL', 
+        }).format(revenues)
+    );
+
+    const revenueTextElement = document.createElement("h1");
+    revenueTextElement.className = "mt-smaller";
+    revenueTextElement.appendChild(revenueText);
+    financeCard2.appendChild(revenueTextElement);
+
+    //render expanses
+
+    const financeCard3 = document.getElementById("finance-card-3");
+    const expansesText = document.createTextNode(
+        new Intl.NumberFormat('pt-BR', { 
+            style: 'currency', 
+            currency: 'BRL', 
+        }).format(expenses)
+    );
+
+    const expansesTextElement = document.createElement("h1");
+    expansesTextElement.className = "mt-smaller";
+    expansesTextElement.appendChild(expansesText);
+    financeCard3.appendChild(expansesTextElement);
+
+    //render balance
+
+    const financeCard4 = document.getElementById("finance-card-4");
+    const balanceText = document.createTextNode(
+        new Intl.NumberFormat('pt-BR', { 
+            style: 'currency', 
+            currency: 'BRL', 
+        }).format(totalValue)
+    );
+
+    const balanceTextElement = document.createElement("h1");
+    balanceTextElement.className = "mt-smaller";
+    balanceTextElement.style.color =' #5936CD';
+    balanceTextElement.appendChild(balanceText);
+    financeCard4.appendChild(balanceTextElement);
+};
+
+const onLoadFinancesData = async () => {
+    try {
+        const date = "2022-12-15";
+        const email = localStorage.getItem("@WalletApp:userEmail");
+        const result = await fetch(
+            `https://mp-wallet-app-api.herokuapp.com/finances?data=${date}`, 
+            {
+                method: "GET",
+                headers: {
+                    email: email,
+                },
+            }
+        );
+        const data = await result.json();
+        renderFinanceElements(data)
+        return data;
+    } catch (error) {
+        return { error };
+    }
+};
+
+
 const onLoadUserInfo = () => {
 
-    const email = localStorage.getItem('@WalletApp:userEmail')
-    const name = localStorage.getItem('@WalletApp:userName')
+    const email = localStorage.getItem('@WalletApp:userEmail');
+    const name = localStorage.getItem('@WalletApp:userName');
 
     const navbarUserInfo = document.getElementById("navbar-user-container");
     const navbarUserAvatar = document.getElementById("navbar-user-avatar");
@@ -32,5 +120,6 @@ const onLoadUserInfo = () => {
 }
 
 window.onload = () => {
-    onLoadUserInfo();    
+    onLoadUserInfo();
+    onLoadFinancesData();   
 };
