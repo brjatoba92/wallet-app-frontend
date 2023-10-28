@@ -1,21 +1,21 @@
 const renderFinanceElements = (data) => {
-    const totalItems  = data.lenght;
+    const totalItems = data.length;
     const revenues = data
         .filter((item) => Number(item.value) > 0)
         .reduce((acc, item) => acc + Number(item.value), 0);
     const expenses = data
         .filter((item) => Number(item.value) < 0)
-        .reduce((acc, item) => acc + Number(item.value), 0);
+    .   reduce((acc, item) => acc + Number(item.value), 0);
     const totalValue = revenues + expenses;
 
     //render total items
 
-    const financeCard1 = document.getElementById("finance-card-1");
+    const financeCard1 = document.getElementById('finance-card-1');
     const totalText = document.createTextNode(totalItems);
     const totalElement = document.createElement("h1");
     totalElement.className = "mt-smaller";
     totalElement.appendChild(totalText);
-    financeCard1.appendChild(totalTextElement);
+    financeCard1.appendChild(totalElement);
 
     //render revenues
 
@@ -69,7 +69,7 @@ const onLoadFinancesData = async () => {
         const date = "2022-12-15";
         const email = localStorage.getItem("@WalletApp:userEmail");
         const result = await fetch(
-            `https://mp-wallet-app-api.herokuapp.com/finances?data=${date}`, 
+            `https://mp-wallet-app-api.herokuapp.com/finances?date=${date}`, 
             {
                 method: "GET",
                 headers: {
