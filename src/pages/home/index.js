@@ -5,7 +5,7 @@ const renderFinanceElements = (data) => {
         .reduce((acc, item) => acc + Number(item.value), 0);
     const expenses = data
         .filter((item) => Number(item.value) < 0)
-    .   reduce((acc, item) => acc + Number(item.value), 0);
+        .reduce((acc, item) => acc + Number(item.value), 0);
     const totalValue = revenues + expenses;
 
     //render total items
