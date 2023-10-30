@@ -36,7 +36,7 @@
                 <div class="finance-table-content-container">
                     <div class="finance-table-content-header">
                         <h2>Ultimos Lançamentos</h2>
-                        <button class="small">Adicionar</button>
+                        <button class="small" onclick="onOpenModal()">Adicionar</button>
                     </div>
                     <table id="finances-table">
                         <tr>
@@ -50,11 +50,11 @@
                 </div>
             </div>
         </div>
-        <div class="modal-background">
+        <div class="modal-background" id="modal">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Adicionar lançamento</h3>
-                    <button class="small">Fechar</button>
+                    <button class="small" onclick="onCloseModal()">Fechar</button>
                 </div>
                 
                 <form id="form-register" class="mt">
