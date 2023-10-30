@@ -1,6 +1,6 @@
 const renderFinancesList = (data) => {
     const table = document.getElementById("finances-table");
-    data.mapa((item) => {
+    data.map((item) => {
         const tableRow = document.createElement("tr");
         tableRow.className = "mt smaller"
         //title
