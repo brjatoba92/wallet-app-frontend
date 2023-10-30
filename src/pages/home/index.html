@@ -46,9 +46,56 @@
                             <th class="center">Valor</th>
                             <th class="right">Ação</th>
                         </tr>
-                       
                     </table>
                 </div>
+            </div>
+        </div>
+        <div class="modal-background">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Adicionar lançamento</h3>
+                    <button class="small">Fechar</button>
+                </div>
+                
+                <form id="form-register" class="mt">
+                    <label for="input-name" class="mt-larger">Titulo: </label>
+                    <input 
+                        class="mt-smaller"  
+                        type="text" 
+                        id="input-title" 
+                        name="input-title"
+                        placeholder="Insira seu nome:"
+                        required="true"
+                    />
+                    <label for="input-value" class="mt">Valor: </label>
+                    <input 
+                        class="mt-smaller"  
+                        type="text" 
+                        id="input-value" 
+                        name="input-value"
+                        placeholder="R$ 102,00"
+                        required="true"
+                    />
+                    <label for="input-date" class="mt">Data: </label>
+                    <input 
+                        class="mt-smaller"  
+                        type="date" 
+                        id="input-date" 
+                        name="input-email"
+                        placeholder=""
+                        required="true"
+                    />
+                    <label for="input-category" class="mt">Categoria: </label>
+                    <input 
+                        class="mt-smaller"  
+                        type="email" 
+                        id="input-category" 
+                        name="input-category"
+                        placeholder="Internet"
+                        required="true"
+                    />
+                    <button class="mt full-width" type="submit">Cadastrar</button>
+                </form>
             </div>
         </div>
     </body>

@@ -129,3 +129,34 @@ td.right{
 td.center{
     text-align: center;
 }
+
+.modal-background{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(1, 4, 0, 0.2);
+}
+
+.modal-content{
+    height: 100%;
+    width: 480px;
+    background-color: #F4F4F9;
+    padding: 24px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.modal-header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

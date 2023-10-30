@@ -44,6 +44,10 @@ p{
     padding: 0px;
 }
 
+p.modal{
+    color: #010400;
+}
+
 
 label{
     width: 100%;
