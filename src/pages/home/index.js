@@ -210,8 +210,24 @@ const onCloseModal = () => {
 
 }
 
+const onCreateFinanceRelease = async () => {
+    try {
+        
+    } catch (error) {
+        alert("Erro ao adicionar novo dado financeiro")
+        
+    }
+}
+
 window.onload = () => {
     onLoadUserInfo();
     onLoadFinancesData();
-    onLoadCategories();  
+    onLoadCategories();
+
+    const form = document.getElementById("form-finance-release");
+    form.onsubmit = (event) => {
+        event.preventDefault();
+        console.log({ target: event.target })
+        onCreateFinanceRelease();
+    }
 };
