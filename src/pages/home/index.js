@@ -208,16 +208,57 @@ const onCloseModal = () => {
     const modal = document.getElementById("modal");
     modal.style.display = "none";
 
-}
+};
+
+
+const onCallAddFinance = async(data) => {
+    try {
+        const email = localStorage.getItem('@WalletApp:userEmail');
+
+        const response = await fetch(
+            'https://mp-wallet-app-api.herokuapp.com/finances', 
+            {
+                method: "POST",
+                mode: "cors",
+                cache: "no-cache",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json",
+                    email: email,
+                },
+                body: JSON.stringify(data),
+            }
+        );
+
+        const user = await response.json();
+        return user;
+        
+    } catch (error) {
+        return{error};
+    }
+};
+
 
 const onCreateFinanceRelease = async (target) => {
     try {
         const title = target[0].value;
-        const value = target[1].value;
+        const value = Number(target[1].value);
         const date = target[2].value;
-        const category = target[3].value;
-        console.log({ title, value, date, category });
-        
+        const category = Number(target[3].value);
+        const result = await onCallAddFinance({
+            title,
+            value,
+            date,
+            category_id: category,
+        });
+        /*console.log({ title, value, date, category });*/
+        if (result.error){
+            alert("Erro ao adicionar novo dado financeiro");
+            return;
+        }
+        onCloseModal();
+        onLoadUserInfo();
+        onLoadFinancesData();
     } catch (error) {
         alert("Erro ao adicionar novo dado financeiro")
         
@@ -228,6 +269,7 @@ window.onload = () => {
     onLoadUserInfo();
     onLoadFinancesData();
     onLoadCategories();
+    
 
     const form = document.getElementById("form-finance-release");
     form.onsubmit = (event) => {
@@ -235,3 +277,5 @@ window.onload = () => {
         onCreateFinanceRelease(event.target);
     }
 };
+
+
