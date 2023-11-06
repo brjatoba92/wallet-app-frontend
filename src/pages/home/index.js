@@ -1,5 +1,7 @@
 const renderFinancesList = (data) => {
     const table = document.getElementById("finances-table");
+    table.innerHTML = "";
+
     data.map((item) => {
         const tableRow = document.createElement("tr");
         tableRow.className = "mt smaller"
@@ -63,9 +65,18 @@ const renderFinanceElements = (data) => {
 
     //render total items
 
-    const financeCard1 = document.getElementById('finance-card-1');
+    const financeCard1 = document.getElementById("finance-card-1");
+    financeCard1.innerHTML = "";
+
+    const totalSubtext = document.createTextNode("Total de lançamentos")
+    const totalSubtextElement = document.createElement("h3")
+    totalSubtextElement.appendChild(totalSubtext)
+    financeCard1.appendChild(totalSubtextElement)
+
     const totalText = document.createTextNode(totalItems);
     const totalElement = document.createElement("h1");
+    
+    totalElement.id = "total-element";
     totalElement.className = "mt-smaller";
     totalElement.appendChild(totalText);
     financeCard1.appendChild(totalElement);
@@ -73,6 +84,7 @@ const renderFinanceElements = (data) => {
     //render revenues
 
     const financeCard2 = document.getElementById("finance-card-2");
+    financeCard2.innerHTML = "";
     const revenueText = document.createTextNode(
         new Intl.NumberFormat('pt-BR', { 
             style: 'currency', 
@@ -80,7 +92,14 @@ const renderFinanceElements = (data) => {
         }).format(revenues)
     );
 
+    const revenueSubtext = document.createTextNode("Receitas")
+    const revenueSubtextElement = document.createElement("h3")
+    revenueSubtextElement.appendChild(revenueSubtext)
+    financeCard2.appendChild(revenueSubtextElement)
+
+
     const revenueTextElement = document.createElement("h1");
+    revenueTextElement.id = "revenue-element";
     revenueTextElement.className = "mt-smaller";
     revenueTextElement.appendChild(revenueText);
     financeCard2.appendChild(revenueTextElement);
@@ -88,6 +107,15 @@ const renderFinanceElements = (data) => {
     //render expanses
 
     const financeCard3 = document.getElementById("finance-card-3");
+    financeCard3.innerHTML = "";
+   
+
+    const expansesSubtext = document.createTextNode("Despesas")
+    const expansesSubtextElement = document.createElement("h3")
+    expansesSubtextElement.appendChild(expansesSubtext)
+    financeCard3.appendChild(expansesSubtextElement)
+
+
     const expansesText = document.createTextNode(
         new Intl.NumberFormat('pt-BR', { 
             style: 'currency', 
@@ -96,6 +124,7 @@ const renderFinanceElements = (data) => {
     );
 
     const expansesTextElement = document.createElement("h1");
+    expansesTextElement.id = "expanses-element";
     expansesTextElement.className = "mt-smaller";
     expansesTextElement.appendChild(expansesText);
     financeCard3.appendChild(expansesTextElement);
@@ -103,6 +132,13 @@ const renderFinanceElements = (data) => {
     //render balance
 
     const financeCard4 = document.getElementById("finance-card-4");
+    financeCard4.innerHTML = "";
+    
+    const balanceSubtext = document.createTextNode("Balanço")
+    const balanceSubtextElement = document.createElement("h3")
+    balanceSubtextElement.appendChild(balanceSubtext)
+    financeCard4.appendChild(balanceSubtextElement)
+    
     const balanceText = document.createTextNode(
         new Intl.NumberFormat('pt-BR', { 
             style: 'currency', 
@@ -111,6 +147,7 @@ const renderFinanceElements = (data) => {
     );
 
     const balanceTextElement = document.createElement("h1");
+    balanceTextElement.id = "balance-element";
     balanceTextElement.className = "mt-smaller";
     balanceTextElement.style.color =' #5936CD';
     balanceTextElement.appendChild(balanceText);
@@ -132,8 +169,8 @@ const onLoadFinancesData = async () => {
             }
         );
         const data = await result.json();
-        renderFinanceElements(data)
-        renderFinancesList(data)
+        renderFinanceElements(data);
+        renderFinancesList(data);
         return data;
     } catch (error) {
         return { error };
@@ -257,7 +294,6 @@ const onCreateFinanceRelease = async (target) => {
             return;
         }
         onCloseModal();
-        onLoadUserInfo();
         onLoadFinancesData();
     } catch (error) {
         alert("Erro ao adicionar novo dado financeiro")
