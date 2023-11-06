@@ -212,8 +212,11 @@ const onCloseModal = () => {
 
 const onCreateFinanceRelease = async (target) => {
     try {
-        const title = target[0].value
-        console.log({ title });
+        const title = target[0].value;
+        const value = target[1].value;
+        const date = target[2].value;
+        const category = target[3].value;
+        console.log({ title, value, date, category });
         
     } catch (error) {
         alert("Erro ao adicionar novo dado financeiro")
