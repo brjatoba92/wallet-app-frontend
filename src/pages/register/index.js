@@ -9,7 +9,7 @@ const onCallRegister = async(email, name) => {
             'https://mp-wallet-app-api.herokuapp.com/users', 
             {
                 method: "POST",
-                mode: "cors",
+                mode: 'cors',
                 cache: "no-cache",
                 credentials: "same-origin",
                 headers: {

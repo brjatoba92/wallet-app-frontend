@@ -2,6 +2,35 @@ const renderFinancesList = (data) => {
     const table = document.getElementById("finances-table");
     table.innerHTML = "";
 
+    const tableHeader = document.createElement("tr");
+    
+    const titleText = document.createTextNode("Titulo");
+    const titleElement = document.createElement("th");
+    titleElement.appendChild(titleText);
+    tableHeader.appendChild(titleElement);
+
+    const categoryText = document.createTextNode("Categoria");
+    const categoryElement = document.createElement("th");
+    categoryElement.appendChild(categoryText);
+    tableHeader.appendChild(categoryElement);
+
+    const valueText = document.createTextNode("Valor");
+    const valueElement = document.createElement("th");
+    valueElement.className = "center";
+    valueElement.appendChild(valueText);
+    tableHeader.appendChild(valueElement);
+
+    const actionText = document.createTextNode("Ação");
+    const actionElement = document.createElement("th");
+    actionElement.className = "right";
+    actionElement.appendChild(actionText);
+    tableHeader.appendChild(actionElement);
+
+    table.appendChild(tableHeader);
+
+
+
+
     data.map((item) => {
         const tableRow = document.createElement("tr");
         tableRow.className = "mt smaller"
@@ -297,16 +326,15 @@ const onCreateFinanceRelease = async (target) => {
         onLoadFinancesData();
     } catch (error) {
         alert("Erro ao adicionar novo dado financeiro")
-        
     }
 }
 
 window.onload = () => {
     onLoadUserInfo();
     onLoadFinancesData();
-    onLoadCategories();
+    onLoadCategories(); 
     
-
+/*Chamando o form do index.html via id com o document.getElementById*/
     const form = document.getElementById("form-finance-release");
     form.onsubmit = (event) => {
         event.preventDefault();

@@ -109,9 +109,12 @@ th{
     color: #7C7C7C;
 }
 
+tr{
+    height: 32px;
+}
+
 th.right{
     text-align: right;
-
 }
 th.center{
     text-align: center;
