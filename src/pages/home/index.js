@@ -215,10 +215,11 @@ const renderFinanceElements = (data) => {
 
 const onLoadFinancesData = async () => {
     try {
-        const date = "2022-12-15";
+        const dateInputValue = document.getElementById("select-date").value;
+        /*const date = dateInputValue;*/
         const email = localStorage.getItem("@WalletApp:userEmail");
         const result = await fetch(
-            `https://mp-wallet-app-api.herokuapp.com/finances?date=${date}`, 
+            `https://mp-wallet-app-api.herokuapp.com/finances?date=${dateInputValue}`, 
             {
                 method: "GET",
                 headers: {
@@ -363,13 +364,17 @@ const setInitialDate = () => {
     const nowDate = new Date().toISOString().split("T")[0];
     console.log(nowDate)
     dateInput.value = nowDate;
-}
+    dateInput.addEventListener("change", () => {
+        onLoadFinancesData();
+    });
+};
 
 window.onload = () => {
+    setInitialDate(); 
     onLoadUserInfo();
     onLoadFinancesData();
     onLoadCategories();
-    setInitialDate(); 
+    
     
 /*Chamando o form do index.html via id com o document.getElementById*/
     const form = document.getElementById("form-finance-release");
