@@ -358,10 +358,18 @@ const onCreateFinanceRelease = async (target) => {
     }
 }
 
+const setInitialDate = () => {
+    const dateInput = document.getElementById("select-date");
+    const nowDate = new Date().toISOString().split("T")[0];
+    console.log(nowDate)
+    dateInput.value = nowDate;
+}
+
 window.onload = () => {
     onLoadUserInfo();
     onLoadFinancesData();
-    onLoadCategories(); 
+    onLoadCategories();
+    setInitialDate(); 
     
 /*Chamando o form do index.html via id com o document.getElementById*/
     const form = document.getElementById("form-finance-release");
