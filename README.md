@@ -22,9 +22,8 @@ The data sources of this project is storage in API Wallet App
 
 ## Live Link
 
-```
 https://brjatoba92.github.io/wallet-app-frontend/
-```
+
 
 ## Technologies used
 - JavaScript
@@ -47,3 +46,17 @@ cd wallet-app-frontend
 3. Open the `index.html` file
 
 4. Use the `teste@teste.com` user or create new one
+
+## Previews
+
+1. Login Screen
+<img src="src/imgs/github1.png" alt="Wallet Preview" height="500">
+
+2. Sigup Sreen
+<img src="src/imgs/github2.png" alt="Wallet Preview" height="500">
+
+3. Dashboard Screen
+<img src="src/imgs/github3.png" alt="Wallet Preview" height="500">
+
+4. Add New Datas Screen
+<img src="src/imgs/github3.png" alt="Wallet Preview" height="500">
