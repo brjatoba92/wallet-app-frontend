@@ -1,5 +1,7 @@
 # Wallet App
 
+<img src="src/imgs/preview.mp4">
+
 ## Introduction
 
 This is an finances menagement dashboard using the JavaScript, HTML and CSS technologies
@@ -47,16 +49,4 @@ cd wallet-app-frontend
 
 4. Use the `teste@teste.com` user or create new one
 
-## Previews
 
-1. Login Screen
-<img src="src/imgs/github1.png" alt="Wallet Preview" width="383" height="184">
-
-2. Sigup Sreen
-<img src="src/imgs/github2.png" alt="Wallet Preview" width="383" height="184">
-
-3. Dashboard Screen
-<img src="src/imgs/github3.png" alt="Wallet Preview" width="383" height="184">
-
-4. Add New Datas Screen
-<img src="src/imgs/github3.png" alt="Wallet Preview" width="383" height="184">
