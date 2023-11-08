@@ -1,6 +1,6 @@
 # Wallet App
 
-<img src="src/imgs/github3.png" hight="500/>
+<img src="src/imgs/github3.png" hight="500"/>
 
 ## Introduction
 
