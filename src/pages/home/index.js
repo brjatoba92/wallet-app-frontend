@@ -236,6 +236,10 @@ const onLoadFinancesData = async () => {
     }
 };
 
+const onLogout = () => {
+    localStorage.clear()
+    window.open("../../../index.html", "_self")
+}
 
 const onLoadUserInfo = () => {
 
@@ -255,6 +259,8 @@ const onLoadUserInfo = () => {
     // add logout link
 
     const logoutElement = document.createElement("a");
+    logoutElement.onclick = () => onLogout();
+    logoutElement.style.cursor = "pointer";
     const logoutText = document.createTextNode("sair");
     logoutElement.appendChild(logoutText);
     navbarUserInfo.appendChild(logoutElement);
