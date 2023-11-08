@@ -50,13 +50,13 @@ cd wallet-app-frontend
 ## Previews
 
 1. Login Screen
-<img src="src/imgs/github1.png" alt="Wallet Preview" height="500">
+<img src="src/imgs/github1.png" alt="Wallet Preview" height="228" width="678">
 
 2. Sigup Sreen
-<img src="src/imgs/github2.png" alt="Wallet Preview" height="500">
+<img src="src/imgs/github2.png" alt="Wallet Preview" height="228" width="678">
 
 3. Dashboard Screen
-<img src="src/imgs/github3.png" alt="Wallet Preview" height="500">
+<img src="src/imgs/github3.png" alt="Wallet Preview"height="228" width="678">
 
 4. Add New Datas Screen
-<img src="src/imgs/github3.png" alt="Wallet Preview" height="500">
+<img src="src/imgs/github3.png" alt="Wallet Preview" height="228" width="678">
