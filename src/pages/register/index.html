@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Wallet App - Sigup </title>
-        <link rel="stylesheet" href="../../../styles.css">
+        <link rel="stylesheet" href="../../../styles.css"> <!-- Todas as coonfigurações do css geral, via classes, são herdadas neste html -->
         <script src="index.js"></script>
     </head>
     <body>
@@ -14,6 +14,12 @@
                     <p class="mt-small">
                         Insira seu nome e seu e-mail para ter acesso ao Wallet app e gerenciar suas finanças.
                     </p>
+                    <!-- Propriedade de formulario
+                        Definir tres id's para serem chamados no js do register
+                        1. Container do formulario
+                        2. Nome da pessoa cadastrada
+                        3. Email da pessoa cadastrada
+                    -->
                     <form id="form-register" class="mt">
                         <label  for="input-name">Nome: </label>
                         <input 
@@ -35,7 +41,7 @@
                         />
                         <button class="mt full-width" type="submit">Cadastrar</button>
                     </form>
-                    <a href="../../../index.html" class="mt-larger">
+                    <a href="../../../index.html" class="mt-larger"> <!-- Aqui vai retornar para a pagina de login -->
                         Já possui uma conta ? Faça o seu login
                     </a>
                 </div>

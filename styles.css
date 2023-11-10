@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap');
 
+/*Configurações gerais */
 
 body{
     padding: 0px;
     margin: 0px;
     font-family: 'Noto Sans', sans-serif;    
 }
+
+/*Configurações de fontes */
 
 h1{
     font-size: 40px;
@@ -48,18 +51,25 @@ p.modal{
     color: #010400;
 }
 
+a{
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/*      Configurações de elementos
+    1 - Label
+    2 - Buttom
+    3 - Input
+    4 - Select
+    5 - Imagens
+*/
 
 label{
     width: 100%;
     height: auto;
     font-size: 14px;
     font-weight: 500;
-}
-
-a{
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: underline;
 }
 
 button{
@@ -93,24 +103,6 @@ button.small{
     height: 36px;
 }
 
-.full-width{
-    width: 100%;
-}
-
-.text-center{
-    text-align: center;
-}
-
-.text-left{
-    text-align: left;
-}
-
-img.logo{
-    width: 88px;
-    height: 30px;
-}
-
-
 input{
     background-color: #F4F4F9;
     width: 100%;
@@ -141,6 +133,33 @@ select{
 
 }
 
+img.logo{
+    width: 88px;
+    height: 30px;
+}
+
+
+/*  Configurações de width
+Aqui fiz para o botão de login  
+
+*/
+.full-width{
+    width: 100%;
+}
+
+/*      Configurações de alinhamentos
+    1- Text-align
+    2 - Margins
+
+*/
+
+.text-center{
+    text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
 
 .mt{
     margin-top: 16px;
@@ -163,19 +182,41 @@ select{
     margin-top: 6px;
 }
 
-.auth-container{
+/*      Container geral
+1-  Login
+2 - Home
+3 - Register
+
+Aqui defino:
+Display - flex sem o flex-direction pois serve para a responsividade
+Largura e altura
+Cor de fundo
+Alinhamento - align-items e justify-content
+*/
+
+.auth-container{ /*Serve para todas as divs que forem construidas*/
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: #5936CD;
+    background-color: #5936CD; 
     align-items: center;
     justify-content: center;
 }
 
+/*Container geral para a pagina home*/
 .auth-container.home{
-    background-color: #F4F4F9;
+    background-color: #F4F4F9; /*Somente mudei a cor para a pagina home mas as demais configurações "pai" são herdadas*/
 }
 
+
+/*      Configurações de uma unica div
+
+Aqui defino:
+Display - flex sem o flex-direction pois serve para a responsividade
+Largura e altura - aqui deixo no auto mas com minimo de 460px
+Cor de fundo
+Alinhamento - align-items e justify-content
+*/
 .auth-content{
     display: flex;
     align-items: center;
@@ -183,21 +224,18 @@ select{
     background-color: #F4F4F9;
     width: 480px;
     height: auto;
-    min-height: 460px;
+    min-height: 460px; /*crescer a altura a partir de 460px*/
     border-radius: 24px;
 }
 
-.sigup{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F4F4F9;
-    width: 480px;
-    height: auto;
-    min-height: 520px;
-    border-radius: 24px;
-}
-
+/*Container dos elementos da pagina de login e register
+Aqui defino:
+Display
+Direção do display como column para colocar todos os elementos verticalmente
+Largura e altura
+Cor de fundo
+Alinhamento - align-items e justify-content
+*/
 
 .auth-content-container{
     display: flex;

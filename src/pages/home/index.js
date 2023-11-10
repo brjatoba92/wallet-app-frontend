@@ -1,3 +1,27 @@
+/*      Funções      
+1 - onDeleteItem - contem a função onLoadFinancesData
+
+2 - renderFinancesList - contem a função de onDeleteItem na sessão de delete
+3 - renderFinanceElements
+
+4 - onLoadFinancesData - chama os dois renders
+
+5 - onLogout
+
+6 - onLoadUserInfo
+7 - onLoadCategories
+8 - onOpenModal
+9 - onCloseModal
+10 - onCallAddFinance
+11 - onCreateFinanceRelease: chama as funções onCloseModal, onLoadFinancesData e onCallAddFinance
+12 - setInitialDate - chama a função onLoadFinancesData
+
+window.onload: carregar todas as funções
+ form.onsubmit: submeter o formulario do modal para que os elementos sejam adicionados na tabela
+ Contem a onCreateFinanceRelease
+*/
+
+/* Ação de deletar*/
 onDeleteItem = async(id) =>{
     try {
         const email = localStorage.getItem("@WalletApp:userEmail");
@@ -10,7 +34,7 @@ onDeleteItem = async(id) =>{
                 },
             }
         );
-        onLoadFinancesData()
+        onLoadFinancesData() /* Tudo dando certo chama a função de onLoadFinancesData*/
     } catch (error) {
         alert("Erro ao deletar item")
         
@@ -18,19 +42,19 @@ onDeleteItem = async(id) =>{
 
 }
 
+/** Carrega os elementos da tabela via id - cabeçalho e elementos */
 const renderFinancesList = (data) => {
-    const table = document.getElementById("finances-table");
-    table.innerHTML = "";
+    const table = document.getElementById("finances-table"); /* id da tabela */
+    table.innerHTML = ""; /** deixa o conteudo do cabeçalho sem interferencia na adição de novos itens do modal */
+    /** 1 . Sessão de criação do cabeçalho */
 
-    const tableHeader = document.createElement("tr");
+    const tableHeader = document.createElement("tr"); /* cria o elemento de linhas da tabela */
     
-    const titleText = document.createTextNode("Titulo");
-    const titleElement = document.createElement("th");
-    titleElement.appendChild(titleText);
-    tableHeader.appendChild(titleElement);
-
+    const titleText = document.createTextNode("Titulo"); /** cria o texto da coluna */
+    const titleElement = document.createElement("th"); /** cria o elemento de cabeçalho da tabela */
+    titleElement.appendChild(titleText); /* o texto é filho do elemento de cabeçalho */
+    tableHeader.appendChild(titleElement); /** os elementos são filhos do cabeçaho */
    
-
     const categoryText = document.createTextNode("Categoria");
     const categoryElement = document.createElement("th");
     categoryElement.appendChild(categoryText);
@@ -53,23 +77,24 @@ const renderFinancesList = (data) => {
     actionElement.appendChild(actionText);
     tableHeader.appendChild(actionElement);
 
-    table.appendChild(tableHeader);
+    table.appendChild(tableHeader); /** os cabelçalhos são filhos da tabela */
 
 
 
-
+    /* 2 - Linhas */
     data.map((item) => {
-        const tableRow = document.createElement("tr");
-        tableRow.className = "mt smaller"
+        const tableRow = document.createElement("tr"); /** criação das linhas */
+        tableRow.className = "mt smaller";
+        
         //title
-        const titleTd = document.createElement("td");
-        const titleText = document.createTextNode(item.title);
-        titleTd.appendChild(titleText);
-        tableRow.appendChild(titleTd);
+        const titleTd = document.createElement("td"); /** criação do elemento da linha */
+        const titleText = document.createTextNode(item.title); /** criação do texto da linha com a propriedade de titulo */
+        titleTd.appendChild(titleText);  /** texto é filho do elemento */
+        tableRow.appendChild(titleTd); /** elemento é filho das linhas da tabela */
 
         //category
         const categoryTd = document.createElement("td");
-        const categoryText = document.createTextNode(item.name);
+        const categoryText = document.createTextNode(item.name); /** criação do texto da linha com a propriedade de nome */
         categoryTd.appendChild(categoryText);
         tableRow.appendChild(categoryTd);
 
@@ -77,7 +102,7 @@ const renderFinancesList = (data) => {
         const dateTd = document.createElement("td")
         const dateText = document.createTextNode(
             new Date(item.date).toLocaleDateString()
-        );
+        ); /** conteudo de data no formato especificado de data */
         dateTd.appendChild(dateText);
         tableRow.appendChild(dateTd);
 
@@ -89,28 +114,36 @@ const renderFinancesList = (data) => {
             style: 'currency', 
             currency: 'BRL', 
             }).format(item.value)
-        );
+        ); /** conteudo do valor no formato em real */
         valueTd.appendChild(valueText);
         tableRow.appendChild(valueTd);
 
         //delete
 
-        const deleteTd = document.createElement("td");
-        deleteTd.onclick = () => onDeleteItem(item.id);
+        const deleteTd = document.createElement("td"); /** criando elemento para deletar a linha */
+        deleteTd.onclick = () => onDeleteItem(item.id); /** chamando a função de deletar */
         deleteTd.style.cursor = "pointer"
         deleteTd.className = "right"
-        const deleteText = document.createTextNode("Deletar");
+        const deleteText = document.createTextNode("Deletar"); /** criando texto de deletar */
         deleteTd.appendChild(deleteText);
         tableRow.appendChild(deleteTd);
 
         //table add tablerow
 
-        table.appendChild(tableRow)
+        table.appendChild(tableRow) /** as linhas da tabela são filhas da tabela */
 
    });
 };
 
+/*  
+* Checar a quantidade de items 
+* Calcular as 
+a. receitas (revenues)
+b. despesas (expanses)
+c. balanço (totalValue) 
+ */
 
+//1. Calculo
 const renderFinanceElements = (data) => {
     const totalItems = data.length;
     const revenues = data
@@ -121,7 +154,9 @@ const renderFinanceElements = (data) => {
         .reduce((acc, item) => acc + Number(item.value), 0);
     const totalValue = revenues + expenses;
 
-    //render total items
+//2. Criando os boxs
+
+    //a. render total items
 
     const financeCard1 = document.getElementById("finance-card-1");
     financeCard1.innerHTML = "";
@@ -139,7 +174,7 @@ const renderFinanceElements = (data) => {
     totalElement.appendChild(totalText);
     financeCard1.appendChild(totalElement);
 
-    //render revenues
+    //b. render revenues
 
     const financeCard2 = document.getElementById("finance-card-2");
     financeCard2.innerHTML = "";
@@ -162,7 +197,7 @@ const renderFinanceElements = (data) => {
     revenueTextElement.appendChild(revenueText);
     financeCard2.appendChild(revenueTextElement);
 
-    //render expanses
+    //c. render expanses
 
     const financeCard3 = document.getElementById("finance-card-3");
     financeCard3.innerHTML = "";
@@ -187,7 +222,7 @@ const renderFinanceElements = (data) => {
     expansesTextElement.appendChild(expansesText);
     financeCard3.appendChild(expansesTextElement);
 
-    //render balance
+    //d. render balance
 
     const financeCard4 = document.getElementById("finance-card-4");
     financeCard4.innerHTML = "";
@@ -212,12 +247,13 @@ const renderFinanceElements = (data) => {
     financeCard4.appendChild(balanceTextElement);
 };
 
-
+/* Carregando os dados financeiros contidos na API  */
 const onLoadFinancesData = async () => {
     try {
         const dateInputValue = document.getElementById("select-date").value;
         /*const date = dateInputValue;*/
-        const email = localStorage.getItem("@WalletApp:userEmail");
+        const email = localStorage.getItem("@WalletApp:userEmail"); /** obtendo o item de email da aplicação */
+        /** Chamando API com o link das finanças via GET - função de obter os valores contidos na API */
         const result = await fetch(
             `https://mp-wallet-app-api.herokuapp.com/finances?date=${dateInputValue}`, 
             {
@@ -227,7 +263,8 @@ const onLoadFinancesData = async () => {
                 },
             }
         );
-        const data = await result.json();
+        const data = await result.json(); //exportar os dados por json
+        // dois renders
         renderFinanceElements(data);
         renderFinancesList(data);
         return data;
@@ -236,71 +273,77 @@ const onLoadFinancesData = async () => {
     }
 };
 
+//Função de sair
 const onLogout = () => {
     localStorage.clear()
     window.open("../../../index.html", "_self")
 }
 
+/* Carregando os dados da aplicação para a navbar*/
 const onLoadUserInfo = () => {
-
+    
+    // dados do armazenamento local da aplicação criada
     const email = localStorage.getItem('@WalletApp:userEmail');
     const name = localStorage.getItem('@WalletApp:userName');
-
+    
+    // chamando via id
     const navbarUserInfo = document.getElementById("navbar-user-container");
     const navbarUserAvatar = document.getElementById("navbar-user-avatar");
 
     //add user email
 
     const emailElement = document.createElement("p");
-    const emailText = document.createTextNode(email);
+    const emailText = document.createTextNode(email); //criando texto do email a partir da constante criada acima
     emailElement.appendChild(emailText);
     navbarUserInfo.appendChild(emailElement);
 
     // add logout link
 
     const logoutElement = document.createElement("a");
-    logoutElement.onclick = () => onLogout();
+    logoutElement.onclick = () => onLogout(); /** função de clicar para sair do dashboard */
     logoutElement.style.cursor = "pointer";
-    const logoutText = document.createTextNode("sair");
+    const logoutText = document.createTextNode("sair"); /** criando texto */
     logoutElement.appendChild(logoutText);
     navbarUserInfo.appendChild(logoutElement);
 
     //add user avatar
 
     const nameElement = document.createElement("h3");
-    const nameText = document.createTextNode(name.charAt(0));
+    const nameText = document.createTextNode(name.charAt(0)); /** pega a priemira letra do nome */
     nameElement.appendChild(nameText);
     navbarUserAvatar.appendChild(nameElement);
-
-
-
 }
-
+/*Categprias contidas na API */
 const onLoadCategories = async() => {
+    // fazendo o teste via try catch
     try {
-        const categoriesSelect = document.getElementById("input-category");
+        const categoriesSelect = document.getElementById("input-category"); /** categorias selecionadas via id */
+        //link da api
         const response = await fetch(
             'https://mp-wallet-app-api.herokuapp.com/categories'
         );
-        const categoriesResult = await response.json();
+        const categoriesResult = await response.json(); //exportando via json
+
         //console.log(categoriesResult)
+
+        // listando as categorias disponiveis
         categoriesResult.map((category) => {
             const option = document.createElement("option");
-            const categoryText = document.createTextNode(category.name)
-            option.id = `category_${category.id}`
+            const categoryText = document.createTextNode(category.name);
+            option.id = `category_${category.id}`;
             option.value = category.id;
             option.appendChild(categoryText);
-            categoriesSelect.appendChild(option)
+            categoriesSelect.appendChild(option);
         })
 
         
     } catch (error) {
-        alert("Erro ao adicionar categoria")
+        alert("Erro ao adicionar categoria") //caso dê errado, apresente esse erro
         
     }
 }
 
-
+// sesão de abrir e fechar o modal
 const onOpenModal = () => {
     const modal = document.getElementById("modal");
     modal.style.display = "flex";
@@ -312,6 +355,7 @@ const onCloseModal = () => {
 
 };
 
+// adicionando od dados financeiros para o email logado 
 
 const onCallAddFinance = async(data) => {
     try {
@@ -364,22 +408,23 @@ const onCreateFinanceRelease = async (target) => {
         alert("Erro ao adicionar novo dado financeiro")
     }
 }
-
+/* Definir data*/
 const setInitialDate = () => {
-    const dateInput = document.getElementById("select-date");
+    const dateInput = document.getElementById("select-date"); /** identificando via id */
     const nowDate = new Date().toISOString().split("T")[0];
     console.log(nowDate)
     dateInput.value = nowDate;
     dateInput.addEventListener("change", () => {
-        onLoadFinancesData();
+        onLoadFinancesData(); /** modifica os dados financeiros a partir da data selecionada */
     });
 };
 
+// carrega todas as classes
 window.onload = () => {
-    setInitialDate(); 
-    onLoadUserInfo();
-    onLoadFinancesData();
-    onLoadCategories();
+    setInitialDate(); // data
+    onLoadUserInfo(); // usuario
+    onLoadFinancesData(); // dados financeiros
+    onLoadCategories(); // categorias
     
     
 /*Chamando o form do index.html via id com o document.getElementById*/

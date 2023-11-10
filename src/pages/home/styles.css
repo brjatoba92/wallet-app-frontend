@@ -1,3 +1,11 @@
+/*      Container geral do dashboard
+1 - Display
+2 - Orientação da tela - todos os elementos distribuidos verticalmente
+3 - Altura
+4 - Align items e justify contente alinhados centralmente
+5 - Cor de fundo
+*/
+
 .site-container{
     display: flex;
     flex-direction: column;
@@ -9,6 +17,9 @@
     background: #F4F4F9;
 }
 
+/*Configurações da barra de navegação*/
+
+/*1- Container geral da navbar*/
 .navbar-container{
     display: flex;
     flex-direction: row;
@@ -17,9 +28,18 @@
     width: 100vw;
     height: 72px;
     padding: 24px 112px;
-    box-sizing: border-box;
+    box-sizing: border-box; /*Border box somente nos containers*/
     background: #fff;    
 }
+
+/*2 - Imagem da logo*/
+
+.logo-navbar{
+    height: 24px;
+    width: auto;
+}
+
+/*3 -  Container do calendario*/
 
 .navbar-calendar-container{
     display: flex;
@@ -37,11 +57,9 @@
     font-weight: bold;
 }
 
-.logo-navbar{
-    height: 24px;
-    width: auto;
-}
+/*4 - Container do usuario*/
 
+/*a - Geral*/
 .navbar-user-container{
     display: flex;
     flex-direction: row;
@@ -51,8 +69,9 @@
     height: 100%;
 }
 
+/*b - Avatar*/
 .navbar-user-avatar{
-    display: flex;
+    display: flex; /*Container em row mas elementos não especificados o flex-direction*/
     width: 48px;
     height: 48px;
     border-radius: 24px;
@@ -61,6 +80,10 @@
     justify-content: center;
 }
 
+
+/*Blocos financeiros*/
+
+/*1- Container Geral*/
 .finance-card-container{
     display: flex;
     flex-direction: row;
@@ -68,9 +91,9 @@
     justify-content: space-between;
     width: 100%;
     padding: 48px 112px;
-    box-sizing: border-box;
+    box-sizing: border-box; /*Border box somente nos containers*/
 }
-
+/*2- Conteudo blocos de dados finaceiros*/
 .finance-card-content{
     display: flex;
     flex-direction: column;
@@ -83,6 +106,10 @@
 
 }
 
+/*Tabela de dados*/
+
+/*1-Container geral*/
+
 .finance-table-container{
     display: flex;
     flex-direction: column;
@@ -90,9 +117,9 @@
     justify-content: flex-start;
     width: 100%;
     padding: 0px 122px;
-    box-sizing: border-box;
+    box-sizing: border-box; /*Border box somente nos containers*/
 }
-
+/*2-Container do conteudo*/
 .finance-table-content-container{
     display: flex;
     width: 100%;
@@ -104,7 +131,7 @@
     height: 592px;
     padding: 24px;
 }
-
+/*3-Conteudo do cabeçalho*/
 .finance-table-content-header{
     display: flex;
     flex-direction: row;
@@ -114,12 +141,12 @@
     padding-bottom: 24px;
     box-sizing: border-box;
 }
-
+/*4 - Largura da tabela no maximo*/
 table{
     width: 100%;
 }
 
-
+/*5 - Configurações dos elementos da tabela*/
 th{
     text-align: left;
     color: #7C7C7C;
@@ -149,8 +176,11 @@ td.center{
     text-align: center;
 }
 
+/*      Configurações do modal      */
+/*1- Container geral*/
+
 .modal-background{
-    display: none;
+    display: none; /*Modal só irá aparecer caso clique em adicionar no dashboard*/
     flex-direction: column;
     align-items: flex-end;
     position: fixed;
@@ -162,7 +192,7 @@ td.center{
     width: 100vw;
     background: rgba(1, 4, 0, 0.2);
 }
-
+/*2 - Conteudo do modal*/
 .modal-content{
     height: 100%;
     width: 480px;
@@ -171,6 +201,7 @@ td.center{
     box-sizing: border-box;
 }
 
+/*3 - Cabeçalho do modal*/
 .modal-header{
     display: flex;
     flex-direction: row;

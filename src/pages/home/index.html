@@ -7,20 +7,26 @@
         <script src="index.js"></script>
     </head>
     <body>
+        <!-- Container geral do site-->
         <div class="site-container">
+            <!-- 1. Barra de navegação -->      
             <div class="navbar-container">
+                <!-- a. Logo -->
                 <img 
                     src="../../../icons/logo-wallet.png" 
                     alt="Logo Wallet App" 
-                    class="logo-navbar" 
+                    class="logo-navbar"
                 />
+                <!-- b. Calendario dinamico -->
                 <div class="navbar-calendar-container">
                     <input type="date" id="select-date" class="input-calendar"/>
                 </div>
+                <!--  c. Avatar - circulo com a primeira letra do nome e ao lado com o email logado-->
                 <div class="navbar-user-container" id="navbar-user-container">
                     <div class="navbar-user-avatar" id="navbar-user-avatar"></div> 
                 </div>
             </div>
+            <!-- 2. Cards financeiros - Itens, Receitas, Despesas e Balanço -->
             <div class="finance-card-container">
                 <div class="finance-card-content" id="finance-card-1">
                 </div>
@@ -31,25 +37,40 @@
                 <div class="finance-card-content" id="finance-card-4">
                 </div>
             </div>
+            <!-- 3. Tabela financeira -->
+            <!-- Container geral-->
             <div class="finance-table-container">
+                <!-- Container do conteudo-->
                 <div class="finance-table-content-container">
+                    <!-- Cabeçalho da tabela-->
                     <div class="finance-table-content-header">
                         <h2>Ultimos Lançamentos</h2>
                         <button class="small" onclick="onOpenModal()">Adicionar</button>
                     </div>
+                    <!-- informações serão geradas via id a partir da API (valores já presentes) e do modal (novos elementos) -->
                     <table id="finances-table">
                         <div id="table-content"></div>
                     </table>
                 </div>
             </div>
         </div>
+        <!-- 4. Menu modal para adicionar novos items -->
+        <!-- Container do modal-->
         <div class="modal-background" id="modal">
+            <!-- Conteudo do modal-->
             <div class="modal-content">
+                <!--a. Cabeçalho do modal -->
                 <div class="modal-header">
                     <h3>Adicionar lançamento</h3>
+                    <!-- Botão para sair do modal -->
                     <button class="small" onclick="onCloseModal()">Fechar</button>
                 </div>
-                
+                <!--   b. Elementos do modal - todos com o identificador via id
+                    1 - Nome 
+                    2 - Valor: positivo para receita e negativo para despesas
+                    3 - Data com calendario dinamico
+                    4 - Categoria - obtido pno GET da API
+                 -->
                 <form id="form-finance-release" class="mt">
                     <label for="input-title" class="mt-larger">Titulo: </label>
                     <input 
@@ -79,14 +100,16 @@
                         required="true"
                     />
                     <label for="input-category" class="mt">Categoria: </label>
+                    <!-- Seleção de categorias obtidas da API via id-->
                     <select 
                         class="mt-smaller"  
                         type="email" 
-                        id="input-category" 
+                        id="input-category"
                         name="input-category"
                         required="true"
                     >
                     </select>
+                    <!-- c. Botão para finalizar, adicionando novos elementos aop dashboard-->
                     <button class="mt full-width" type="submit">Adicionar</button>
                 </form>
             </div>
